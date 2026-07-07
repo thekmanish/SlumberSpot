@@ -6,7 +6,7 @@ services:
 
     restart: always
 
-    environments:
+    environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 88888888
       POSTGRES_DB: slumberspot_db
@@ -22,7 +22,7 @@ services:
       context: ./server
       dockerfile: Dockerfile
 
-    container_name: slumberspot_backend
+    container_name: slumberspot-backend
 
     restart: always
 
@@ -30,7 +30,7 @@ services:
       - postgres
 
     environment:
-      DATABASE_URL: postgresql://postgres:88888888:@postgres:5432/slumberspot_db
+      DATABASE_URL: postgresql://postgres:88888888@postgres:5432/slumberspot_db
       JWT_SECRET: itsjwtsecretboi
 
     ports:
