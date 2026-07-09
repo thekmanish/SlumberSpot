@@ -11,6 +11,8 @@ interface UserProfile {
 }
 
 export default function ProfilePage () {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
     const [user, setUser] = useState<UserProfile | null>(null);
     const router = useRouter()
 
@@ -32,7 +34,7 @@ export default function ProfilePage () {
         try {   
 
             const response = await fetch(
-                'http://localhost:3000/users/me',
+                `${apiUrl}/users/me`,
                 {
                     headers : {
                         Authorization : `Bearer ${token}` 
@@ -65,7 +67,7 @@ export default function ProfilePage () {
         }
         try {
             const response = await fetch(
-                'http://localhost:3000/users/me',
+                `${apiUrl}/users/me`,
                 {
                     method : 'PATCH',
                     headers : {

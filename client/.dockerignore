@@ -1,6 +1,7 @@
 node_modules
-dist
+.next
+.git
 .env
 .env.local
-generated
-coverage
+README.md
+*.log

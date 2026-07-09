@@ -2,13 +2,14 @@
 import { useState } from "react";
 
 export default function SignupPage() {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSignup = async () => {
         try {
             const response = await fetch(
-                'http://localhost:3000/auth/register',
+                `${apiUrl}/auth/register`,
                 {
                     method : 'POST',
                     headers : {

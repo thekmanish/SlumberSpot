@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function LoginPage () {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
     const router = useRouter();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -12,7 +14,7 @@ export default function LoginPage () {
         try {
             
             const response = await fetch(
-                'http://localhost:3000/auth/login',
+                `${apiUrl}/auth/login`,
                 {
                     method : 'POST',
                     headers : {
