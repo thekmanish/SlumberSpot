@@ -9,12 +9,13 @@ COPY package.json pnpm-lock.yaml ./
 
 ENV CI=true
 
+RUN pnpm install
+
 COPY . .
 
 ARG NEXT_PUBLIC_API_URL
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 
-RUN pnpm install
 RUN pnpm build
 
 # Runtime Stage

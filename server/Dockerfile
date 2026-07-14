@@ -10,10 +10,11 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 ENV CI=true
 
-COPY . .
-
 RUN pnpm install
 RUN pnpm prisma generate
+
+COPY . .
+
 RUN pnpm build
 RUN pnpm prune --prod
 
