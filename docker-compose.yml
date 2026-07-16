@@ -42,7 +42,7 @@ services:
       context: ./client
       dockerfile: Dockerfile 
       args: 
-        NEXT_PUBLIC_API_URL: http://13.60.105.116:3000
+        NEXT_PUBLIC_API_URL: http://51.20.147.99
 
     container_name: slumberspot-frontend
 
